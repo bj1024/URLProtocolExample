@@ -16,6 +16,22 @@ The major way of Mocking URLSession for unit testing is follows.
 This is sample of unit test with URLProtocol.
  
 
+# Digest
+
+- URLSession is configurable by setting URLSessionConfiguration.
+
+```
+let configuration = URLSessionConfiguration.ephemeral
+configuration.protocolClasses = [MockURLProtocol.self]
+let urlSession = URLSession(configuration: configuration)
+```
+
+
+- You can mocking URLSession's behavior by changing URLSessionConfiguration.protocolClass.
+
+- You can use class or struct of implemented URLProtocol as mock.
+
+
 # Reference 
 
 ## URLSession
