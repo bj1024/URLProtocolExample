@@ -1,6 +1,3 @@
-//
-// Copyright (c) 2020, digitalnauts All rights reserved. 
-//
 
 import UIKit
 
