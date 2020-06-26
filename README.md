@@ -16,6 +16,15 @@ The major way of Mocking URLSession for unit testing is follows.
 This is sample of unit test with URLProtocol.
  
 
+# Digest
+
+- URLSession is configurable by setting URLSessionConfiguration.
+
+- You can mocking URLSession's behavior by changing URLSessionConfiguration.protocolClass.
+
+- You can use class or struct of implemented URLProtocol as mock.
+
+
 # Reference 
 
 ## URLSession
