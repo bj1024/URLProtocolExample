@@ -1,6 +1,6 @@
 
-import XCTest
 import CoreLocation
+import XCTest
 
 @testable import URLProtocolExample
 
@@ -13,12 +13,9 @@ class APILoaderTests: XCTestCase {
     configuration.protocolClasses = [MockURLProtocol.self]
     let urlSession = URLSession(configuration: configuration)
     loader = APIRequestLoader(apiRequest: request, urlSession: urlSession)
-
   }
 
-  override func tearDown() {
-
-  }
+  override func tearDown() {}
 
   func testLoaderSuccess() {
     let inputCoordinate = CLLocationCoordinate2D(latitude: 37.3293, longitude: -121.8893)
@@ -28,7 +25,7 @@ class APILoaderTests: XCTestCase {
       return (HTTPURLResponse(), mockJSONData)
     }
     let expectation = XCTestExpectation(description: "response")
-    loader.loadAPIRequest(requestData: inputCoordinate) { pointsOfInterest, error in
+    loader.loadAPIRequest(requestData: inputCoordinate) { pointsOfInterest, _ in
       XCTAssertEqual(pointsOfInterest, [PointOfInterest(name: "MyPointOfInterest")])
       expectation.fulfill()
     }

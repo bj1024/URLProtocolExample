@@ -7,7 +7,6 @@ protocol APIRequest {
   func parseResponse(data: Data) throws -> ResponseDataType
 }
 
-
 class APIRequestLoader<T: APIRequest> {
   let apiRequest: T
   let urlSession: URLSession
@@ -21,7 +20,7 @@ class APIRequestLoader<T: APIRequest> {
                       completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void) {
     do {
       let urlRequest = try apiRequest.makeRequest(from: requestData)
-      urlSession.dataTask(with: urlRequest) { data, response, error in
+      urlSession.dataTask(with: urlRequest) { data, _, error in
         guard let data = data else { return completionHandler(nil, error) }
         do {
           let parsedResponse = try self.apiRequest.parseResponse(data: data)
@@ -32,5 +31,4 @@ class APIRequestLoader<T: APIRequest> {
       }.resume()
     } catch { return completionHandler(nil, error) }
   }
-
 }

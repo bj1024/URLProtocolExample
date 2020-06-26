@@ -1,22 +1,20 @@
 
-import Foundation
 import CoreLocation
+import Foundation
 
-
-enum RequestError:Error{
+enum RequestError: Error {
   case invalidCoordinate
 }
 
-struct PointOfInterest:Decodable,Equatable {
-  var name:String
+struct PointOfInterest: Decodable, Equatable {
+  var name: String
 
-  init(name:String) {
+  init(name: String) {
     self.name = name
   }
-
 }
 
-struct PointsOfInterestRequest:APIRequest {
+struct PointsOfInterestRequest: APIRequest {
   func makeRequest(from coordinate: CLLocationCoordinate2D) throws -> URLRequest {
     guard CLLocationCoordinate2DIsValid(coordinate) else {
       throw RequestError.invalidCoordinate
@@ -28,8 +26,8 @@ struct PointsOfInterestRequest:APIRequest {
     ]
     return URLRequest(url: components.url!)
   }
+
   func parseResponse(data: Data) throws -> [PointOfInterest] {
     return try JSONDecoder().decode([PointOfInterest].self, from: data)
   }
 }
-
