@@ -12,11 +12,9 @@ The major way of emurating URLSession for unit testing is follows.
 
 - In WWDC 2018, Apple introduced a way of unittesting using URLProtocol.
 
-
 This is sample of unit test with URLProtocol.
- 
 
-# Digest
+# Summary
 
 - URLSession is configurable by setting URLSessionConfiguration.
 
@@ -26,25 +24,23 @@ configuration.protocolClasses = [MockURLProtocol.self]
 let urlSession = URLSession(configuration: configuration)
 ```
 
-
 - You can mocking URLSession's behavior by changing URLSessionConfiguration.protocolClass.
 
 - You can use class or struct of implemented URLProtocol as mock.
 
-
-# Reference 
+# Reference
 
 ## URLSession
 
  [URLSession \| Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
 
-##  URLProtocol
+## URLProtocol
 
 > URLProtocol An abstract class that handles the loading of protocol-specific URL data.
 > [URLProtocol | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlprotocol)
 
-
 ## protocolClasses
+
 protocolClasses | Apple Developer Documentation https://developer.apple.com/documentation/foundation/urlsessionconfiguration/1411050-protocolclasses
 
 ## WWDC 2018 Testing Tips & Tricks
@@ -53,6 +49,4 @@ protocolClasses | Apple Developer Documentation https://developer.apple.com/docu
 > [Testing Tips & Tricks - WWDC 2018 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2018/417) 
 > [https://developer.apple.com/videos/play/wwdc2018/417](https://developer.apple.com/videos/play/wwdc2018/417s) 
 
-
 ## 
-
