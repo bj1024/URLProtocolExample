@@ -3,10 +3,10 @@
 How to test [URLSession](https://developer.apple.com/documentation/foundation/urlsession)?
 
 When call the some api , we use dataTask Method of URLSession class.
-When testing api call, we want to mock the URLSession.
+When testing api call, we want to emurate communication of the URLSession.
 
+The major way of emurating URLSession for unit testing is follows.
 
-The major way of Mocking URLSession for unit testing is follows.
 - Define the Protcol of  URLSession , URLSessionDataTask.
  Then create Mock class.
 
