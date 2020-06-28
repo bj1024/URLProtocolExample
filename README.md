@@ -56,5 +56,3 @@ protocolClasses | Apple Developer Documentation https://developer.apple.com/docu
 > Testing Tips & Tricks Testing is an essential tool to consistently verify your code works correctly, but often your code has dependencies that are out of your control\. Discover techniques for making hard\-to\-test code testable on Apple platforms using XCTest\. Learn a variety of tips for writing higher\-quality tests that run fast and require less maintenance\. 
 > [Testing Tips & Tricks - WWDC 2018 - Videos - Apple Developer](https://developer.apple.com/videos/play/wwdc2018/417) 
 > [https://developer.apple.com/videos/play/wwdc2018/417](https://developer.apple.com/videos/play/wwdc2018/417s) 
-
-## 
