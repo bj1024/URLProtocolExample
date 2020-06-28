@@ -28,6 +28,14 @@ let urlSession = URLSession(configuration: configuration)
 
 - You can use class or struct of implemented URLProtocol as mock.
 
+
+- TODO another way. URLProtocol registerClass
+
+> Attempts to register a subclass of URLProtocol, making it visible to the URL loading system.
+> [registerClass(_:) | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlprotocol/1407208-registerclass)
+
+
+
 # Reference
 
 ## URLSession
